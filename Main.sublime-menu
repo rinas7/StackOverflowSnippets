@@ -1,0 +1,11 @@
+[
+    {
+        "id": "tools",
+        "children": [
+            {
+                "command": "sosnippets",
+                "caption": "Stack Overflow Snippets"
+            }
+        ]
+    }
+]
