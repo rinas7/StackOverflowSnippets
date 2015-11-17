@@ -2,7 +2,7 @@
 
 One day I came across this reddit post: [How to Program (in four easy steps)](https://www.reddit.com/r/ProgrammerHumor/comments/2xmhh7/how_to_program_in_four_easy_steps/).
 
-That four steps looked a bit complicated, so I created this:
+That four steps didn't look easy enough, so I created this:
 
 ![Demo](http://i.imgur.com/4bRsv29.gif)
 
