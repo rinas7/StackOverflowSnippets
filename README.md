@@ -4,7 +4,7 @@ One day I came across this reddit post: [How to Program (in four easy steps)](ht
 
 That four steps didn't look easy enough, so I created this:
 
-![Demo](http://i.imgur.com/4bRsv29.gif)
+![Demo](http://i.imgur.com/QovxSAP.gif)
 
 ## How to Use It?
 

@@ -100,6 +100,8 @@ class SOQuestionsHandler(AbstractSORequestHandler):
 
 class SOAnswersHandler(AbstractSORequestHandler):
 
+    lines_per_snippet = 5
+
     def new_thread(self):
         return SOAnswersThread(self.data)
 
@@ -108,9 +110,24 @@ class SOAnswersHandler(AbstractSORequestHandler):
         snippets = self.snippets_from_items(result['items'])
         if snippets:
             self.view.show_quick_panel(
-                snippets, lambda i: self.on_snippet_selected(snippets[i]))
+                self.format_quick_panel_snippets(snippets),
+                lambda i: self.on_snippet_selected(snippets[i]))
         else:
             sublime.error_message('No snippets found')
+
+    def format_quick_panel_snippets(self, snippets):
+        result = []
+        for snippet in snippets:
+            lines = self.remove_blank_lines(snippet.splitlines())
+            if len(lines) > self.lines_per_snippet:
+                lines = lines[:self.lines_per_snippet-1] + ['...']
+            else:
+                lines.extend(['']*(self.lines_per_snippet - len(lines)))
+            result.append(lines)
+        return result
+
+    def remove_blank_lines(self, lines):
+        return [l for l in lines if l.strip() != '']
 
     def snippets_from_items(self, items):
         snippets = []
